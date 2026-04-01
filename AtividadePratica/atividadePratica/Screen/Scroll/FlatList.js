@@ -3,7 +3,7 @@ import { FlatList, Text, StyleSheet, View } from 'react-native';
 
 const data = Array.from({ length: 80 }, (_, i) => ({ id: i, name: `Item ${i + 1}` }));
 
-export default function FlatListScreen() {
+export default function App() {
   return (
     <FlatList
       data={data}

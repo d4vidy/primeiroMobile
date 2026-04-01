@@ -4,7 +4,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ScreenHome from './Screen/HomeScreen';
-import Screen2 from './components/Evento2';
 
 import ModalFade from './Screen/Modals/ModalFade.js';
 import ModalNone from './Screen/Modals/ModalNone.js';
@@ -13,6 +12,8 @@ import ModalSlide from './Screen/Modals/ModalSlide.js';
 import ScrollViewScreen from './Screen/Scroll/ScrollView.js';
 import FlatListScreen from './Screen/Scroll/FlatList.js';
 import SectionListScreen from './Screen/Scroll/SectionList.js';
+
+import TelaCamera from './Screen/Camera/TelaCamera.js';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -39,11 +40,12 @@ function TabNavigator2(){
 
 export default function App(){
   return(
-    <NavigationContainer>
+    <NavigationContainer >
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={ScreenHome} />
         <Drawer.Screen name="Tela Modal" component={TabNavigator1} />
         <Drawer.Screen name="Tela Scroll" component={TabNavigator2} />
+        <Drawer.Screen name="Tela Camera" component={TelaCamera} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   item: {
     marginBottom: 10,
     padding: 20,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#bdbaba',
     borderRadius: 8,
   },
   text: {

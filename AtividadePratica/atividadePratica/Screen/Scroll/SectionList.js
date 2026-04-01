@@ -37,14 +37,14 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 18,
     fontWeight: 'bold',
-    backgroundColor: '#d0d0d0',
+    backgroundColor: '#a85454',
     padding: 10,
     borderRadius: 8,
   },
   item: {
     marginBottom: 10,
     padding: 15,
-    backgroundColor: '#f9fbe7',
+    backgroundColor: '#3aad87',
     borderRadius: 8,
   },
   text: {
