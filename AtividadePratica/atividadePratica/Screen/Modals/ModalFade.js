@@ -1,4 +1,4 @@
-import CustomModalScreen from "../../components/Evento1";
+import CustomModalScreen from "./BaseModal";
 
 const ModalFade = () => {
     return (

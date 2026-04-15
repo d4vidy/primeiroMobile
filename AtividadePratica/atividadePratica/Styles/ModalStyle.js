@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+const modalStyle = StyleSheet.create({
     screenContainer: {
         flex: 1,
         justifyContent: 'center',
@@ -73,3 +73,5 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
 });
+
+export default modalStyle;
