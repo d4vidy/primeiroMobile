@@ -44,14 +44,6 @@ function TabNavigator2(){
   );
 }
 
-function TabNavigator3(){
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Cadastrar aluguel" component={FormScreen} />
-      <Tab.Screen name="Lista de Carros" component={ListScreen} />
-    </Tab.Navigator>
-  );
-}
 
 function TelaAtividade() {
   return(
@@ -59,7 +51,8 @@ function TelaAtividade() {
       <Drawer.Screen name="Bem-Vindo" component={HomeScreen} />
       <Drawer.Screen name="Tela Modal" component={TabNavigator1} />
       <Drawer.Screen name="Tela Scroll" component={TabNavigator2} />
-      <Drawer.Screen name="Tela Formulário" component={TabNavigator3} />
+      <Drawer.Screen name="Cadastro de Aluguel" component={FormScreen} />
+      <Drawer.Screen name="Lista de Aluguéis" component={ListScreen} />
     </Drawer.Navigator>
   )
 }

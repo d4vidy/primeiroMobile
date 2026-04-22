@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { signOut } from 'firebase/auth';
-import { auth } from '../config/firebaseConfig';
+import { getDoc, doc } from 'firebase/firestore';
+import { auth, db } from '../config/firebaseConfig';
 
 export default function HomeScreen({ navigation }) {
-    <Text style={styles.emailText}>{auth.currentUser?.email}</Text>
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        const fetchUserName = async () => {
+            try {
+                if (auth.currentUser) {
+                    const userDoc = await getDoc(doc(db, 'users', auth.currentUser.uid));
+                    if (userDoc.exists()) {
+                        setUserName(userDoc.data().name);
+                    }
+                }
+            } catch (error) {
+                console.error('Erro ao buscar nome do usuário:', error);
+            }
+        };
+        fetchUserName();
+    }, []);
 
     const handleLogout = () => {
         signOut(auth).then(() => {
@@ -17,7 +34,7 @@ export default function HomeScreen({ navigation }) {
     return (
     <View style={styles.container}>
       {/* Pegamos o email do usuário logado dinamicamente via auth.currentUser */}
-      <Text style={styles.welcomeText}>Bem-vindo!</Text>
+      <Text style={styles.welcomeText}>Bem-vindo, {userName}!</Text>
       <Text style={styles.emailText}>{auth.currentUser?.email}</Text>
       
       <TouchableOpacity style={styles.button} onPress={handleLogout}>

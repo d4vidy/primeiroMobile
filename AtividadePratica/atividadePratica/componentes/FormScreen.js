@@ -1,10 +1,9 @@
-//import { createUserWithEmailAndPassword, deleteUser } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../config/firebaseConfig';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Modal } from 'react-native';
-import { useState } from 'react';
+import React , { useState } from 'react';
 
-const FormScreen = () => {
+export default function FormScreen(){
     const [carName, setCarName] = useState('');
     const [clientName, setClientName] = useState('');
     const [valor, setValor] = useState('');
@@ -185,5 +184,3 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
-
-export default FormScreen;
